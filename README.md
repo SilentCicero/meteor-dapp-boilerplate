@@ -2,7 +2,7 @@
 
 A starting point for MeteorJS decentralized applications. Includes iron-router, Bootstrap 3, Font Awesome, LESS and more.
 
-**Originally based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet).
+**This boilerplate is largley based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet).
 
 * [Included Packages](#included-packages)
 * [Installation](#installation)
@@ -70,7 +70,7 @@ Go to http://localhost:3000
 
 ## <a name="file-structure"></a> File Structure
 
-We have a common file structure we use across all of our Meteor apps. Client-only files are stored in the `client` directory, server-only files are stored in the `server` directory, and shared files are stored in the `both` directory. The `private` and `public` directories are for either private or public assets. 
+This file structure is largley based off of Differentials boilerplate, but with client-only directories. Client-only files are stored in the `client` directory. The `public` directory is for publicly accessible assets such as images and fonts.
 
 ## <a name="bootstrap-and-less"></a> Bootstrap and LESS
 
