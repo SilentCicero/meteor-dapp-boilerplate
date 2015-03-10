@@ -16,6 +16,7 @@ A starting point for MeteorJS decentralized applications. Includes iron-router, 
   * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers)
   * [matb33:collection-hooks](https://github.com/matb33/meteor-collection-hooks)
   * [reywood:publish-composite](https://github.com/englue/meteor-publish-composite)
+  * [frozeman:persistent-minimongo](https://github.com/frozeman/meteor-persistent-minimongo)
 * Router:
   * [iron:router](https://github.com/EventedMind/iron-router)
   * [zimme:iron-router-active](https://github.com/zimme/meteor-iron-router-active)
@@ -37,7 +38,6 @@ A starting point for MeteorJS decentralized applications. Includes iron-router, 
   * [chuangbo:cookie](https://github.com/chuangbo/meteor-cookie)
   * [Underscore.js](http://underscorejs.org/)
   * [Underscore.string](http://epeli.github.io/underscore.string/)
-  * [frozeman:persistent-minimongo](https://github.com/frozeman/meteor-persistent-minimongo)
   * [frozeman:storage](https://github.com/frozeman/meteor-storage)
   * [frozeman:template-var](https://github.com/frozeman/meteor-template-var)
   * [frozeman:reactive-timer](https://github.com/frozeman/meteor-reactive-timer)
