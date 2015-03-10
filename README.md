@@ -62,7 +62,7 @@ Start an eth node open the http://localhost:3000 in *mist*, *mix* or *alethzero*
 
 Start your app using meteor
 
-    $ cd ethereum-dapp-whisper-client/app
+    $ cd <yourapp>/app
     $ meteor
 
 Go to http://localhost:3000
