@@ -6,6 +6,7 @@ A starting point for MeteorJS decentralized applications. Includes iron-router, 
 
 * [Included Packages](#included-packages)
 * [Installation](#installation)
+* [Deployment](#deployment)
 * [File Structure](#file-structure)
 * [Bootstrap and Less](#bootstrap-and-less)
 * [Favicons and Touch Icons](#favicons-and-touch-icons)
