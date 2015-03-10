@@ -1,0 +1,18 @@
+<template name="components_multiplyContract">
+	<div class="panel panel-default panel-dapp">
+	  <div class="panel-heading">{{i18n 'dapp.components.multiplyContract.header'}}</div>
+	  <div class="panel-body">
+		{{#if $.Session.get 'address'}}
+		<p>{{{i18n 'dapp.components.multiplyContract.deployed'}}}: <strong>{{$.Session.get 'address'}}</strong></p>
+		<div class="divider"></div>
+		<h3>{{i18n 'dapp.app.headers.solidity'}}</h3>
+		<pre>{{source}}</pre>
+		<p><input type="text" id="multiplyNum" class="form-control" placeholder="{{i18n 'dapp.components.multiplyContract.placeholder'}}" /> <br/>
+7 * {{$.Session.get 'multiplyValue'}}  = <strong>{{$.Session.get 'multiplyResult'}}</strong></p>
+		{{else}}
+		<p>{{i18n 'dapp.components.multiplyContract.description'}}</p>
+		<button type="button" class="btn btn-default">{{i18n 'dapp.components.multiplyContract.create'}}</button>
+		{{/if}}
+	  </div>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+<template name="layout_main">
+   {{> yield region="header"}}
+
+	<!-- content -->
+	<main class="container-fluid">
+		{{> yield}}
+	</main>
+   {{> yield region="footer"}}
+</template>

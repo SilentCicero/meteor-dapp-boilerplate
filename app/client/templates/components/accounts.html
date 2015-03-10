@@ -1,0 +1,14 @@
+<template name="components_accounts">
+	<div class="panel panel-default panel-dapp">
+	  <div class="panel-heading">{{i18n 'dapp.components.accounts.header'}}</div>
+	  <div class="panel-body">
+		<p>{{i18n 'dapp.components.accounts.description'}}</p>
+	  </div>
+	  <table class="table table-bordered">
+		<thead><tr><td>#</td><td>{{i18n 'dapp.app.headers.identicon'}}</td><td>{{i18n 'dapp.app.headers.address'}}</td><td>{{i18n 'dapp.app.headers.balance'}}</td></tr></thead>
+		  <tbody>{{#each accounts}}
+		  	<tr><td>{{number}}</td><td>{{> dapp_identicon identity=address class="dapp-small"}}</td><td> {{address}}</td><td>{{toEth balance}} ether</td></tr>
+		  {{/each}}</tbody>
+	  </table>
+	</div>
+</template>

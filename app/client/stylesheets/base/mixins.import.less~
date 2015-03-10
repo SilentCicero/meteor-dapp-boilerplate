@@ -1,0 +1,39 @@
+// Bootstrap Mixins
+@import "./lib/bootstrap/mixins.import.less";
+
+// Custom Mixins
+.blur(@amount) {
+  -webkit-filter: blur(@amount);
+     -moz-filter: blur(@amount);
+       -o-filter: blur(@amount);
+      -ms-filter: blur(@amount);
+          filter: blur(@amount);
+}
+
+.panel-dapp{
+	.panel-heading{
+		font-size: @font-size-h3;
+	}
+
+	.table{
+		thead{ 
+			td{	
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.panel-health{
+	.table{
+		td{
+			width: 50%;
+			padding: 10px;
+		}
+	}
+
+	.heading{
+		text-align: right;
+		font-weight: bold;
+	}
+}
