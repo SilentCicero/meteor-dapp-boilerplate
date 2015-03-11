@@ -2,7 +2,7 @@
 
 A starting point for decentralized MeteorJS applications. Includes Ethereum.js, iron-router, Bootstrap 3, Font Awesome, LESS and more.
 
-**This boilerplate is based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet). Note, this boilerplate is still in Alpha stages.
+**Based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet). Please note that this boilerplate is still in Alpha.
 
 * [Included Packages](#included-packages)
 * [Installation](#installation)
