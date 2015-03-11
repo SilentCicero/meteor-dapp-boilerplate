@@ -47,10 +47,10 @@ var MultiplyContract = web3.eth.contract(abi),
 Template['components_multiplyContract'].helpers({
 
 	/**
-    Get multiply contract source code.
-
-    @method (source)
-    */
+	Get multiply contract source code.
+	
+	@method (source)
+	*/
 
 	'source': function(){
 		return source;
@@ -60,22 +60,22 @@ Template['components_multiplyContract'].helpers({
 Template['components_multiplyContract'].events({
 
 	/**
-    On "Create New Contract" click
-
-    @event click .btn-default
-    */
+	On "Create New Contract" click
+	
+	@event click .btn-default
+	*/
 
 	"click .btn-default": function(event, template){ // Create Contract
-		var address = web3.eth.sendTransaction({code: hex}); // Eventually web3.eth.solidity(source) instead of hex for Go CLI
-        contract = new MultiplyContract(address); // Create Multiply Contract with Address
+		var address = web3.eth.sendTransaction({data: hex, gasPrice: 10000000000000}); // Eventually web3.eth.solidity(source) instead of hex for Go CLI
+        	contract = new MultiplyContract(address); // Create Multiply Contract with Address
 		Session.set('address', address); // Set Address for Further Use
 	},
 
 	/**
-    On Multiply Number Input keyup
-
-    @event keyup .form-control
-    */
+	On Multiply Number Input keyup
+	
+	@event keyup .form-control
+	*/
 
 	"keyup .form-control": function(event, template){ // Call Contract
 		var value = template.find("#multiplyNum").value;
