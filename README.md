@@ -70,7 +70,7 @@ Go to http://localhost:3000
 
 ## <a name="file-structure"></a> File Structure
 
-This file structure is largley based off of Differentials boilerplate, but with client-only directories. Client-only files are stored in the `client` directory. The `public` directory is for publicly accessible assets such as images and fonts. The `i18n` directory is for lnaguage files that use the i18n tap.
+This file structure is largley based off of Differentials boilerplate, but with client-only directories. Client-only files are stored in the `client` directory. The `public` directory is for publicly accessible assets such as images and fonts. The `i18n` directory is for language files.
 
 ## <a name="bootstrap-and-less"></a> Bootstrap and LESS
 
