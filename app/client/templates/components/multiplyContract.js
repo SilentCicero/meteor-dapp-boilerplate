@@ -66,7 +66,7 @@ Template['components_multiplyContract'].events({
 	*/
 
 	"click .btn-default": function(event, template){ // Create Contract
-		var address = web3.eth.sendTransaction({data: hex, gasPrice: 10000000000000}); // Eventually web3.eth.solidity(source) instead of hex for Go CLI
+		var address = web3.eth.sendTransaction({from: web3.eth.accounts[0], code: hex}); // Eventually web3.eth.solidity(source) instead of hex for Go CLI
         	contract = new MultiplyContract(address); // Create Multiply Contract with Address
 		Session.set('address', address); // Set Address for Further Use
 	},

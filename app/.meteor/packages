@@ -16,7 +16,7 @@ yasinuslu:blaze-meta
 numeral:numeral
 ethereum:elements
 ethereum:tools
-ethereum:js@0.0.15-rc7
+ethereum:js
 frozeman:persistent-minimongo
 frozeman:storage
 frozeman:template-var
