@@ -79,7 +79,7 @@ Template['components_multiplyContract'].events({
 
 	"keyup .form-control": function(event, template){ // Call Contract
 		var value = template.find("#multiplyNum").value;
-		var result = contract.call({from: web3.eth.accounts[0], gas: 0, gasPrice: web3.eth.gasPrice, value: 0}).multiply(parseInt(value)); // Call Contract and Multply Given Value
+		var result = contract.call({from: web3.eth.accounts[0]}).multiply(parseInt(value)); // Call Contract and Multply Given Value
 		Session.set('multiplyValue', String(value));
 		Session.set('multiplyResult', String(result));
 	},
