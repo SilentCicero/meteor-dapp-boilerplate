@@ -18,8 +18,8 @@ Template['components_balance'].helpers({
     @method (watchBalance)
     */
 
-    'watchBalance': function(){
-		return String(EthTools.convertWei(Session.get('balance'), LocalStore.get('etherUnit')));
+    'watchBalance': function(){        
+		return web3.fromWei(Session.get('balance'), LocalStore.get('etherUnit')).toString(10);
     },
 });
 

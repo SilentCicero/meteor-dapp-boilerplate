@@ -32,7 +32,7 @@ Template['components_accounts'].helpers({
     */
 
 	'toEth': function(wei){
-		return String(EthTools.convertWei(wei, LocalStore.get('etherUnit')));
+		return web3.fromWei(wei, LocalStore.get('etherUnit')).toString(10);
 	},
 
 	/**
