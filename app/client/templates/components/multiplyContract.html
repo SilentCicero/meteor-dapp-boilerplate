@@ -3,7 +3,7 @@
 	  <div class="panel-heading">{{i18n 'dapp.components.multiplyContract.header'}}</div>
 	  <div class="panel-body">
 		{{#if $.Session.get 'address'}}
-		<p>{{{i18n 'dapp.components.multiplyContract.deployed'}}}: <strong>{{$.Session.get 'address'}}</strong></p>
+		<p>{{{i18n 'dapp.components.multiplyContract.deployed'}}}: <strong><input type="text" value="{{$.Session.get 'address'}}" class="web3_address" /></strong></p>
 		<div class="divider"></div>
 		<h3>{{i18n 'dapp.app.headers.solidity'}}</h3>
 		<pre>{{source}}</pre>
