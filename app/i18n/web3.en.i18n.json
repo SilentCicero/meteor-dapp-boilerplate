@@ -1,0 +1,61 @@
+{
+    "web3": {
+        "dapp": {
+            "loading": "Loading from blockchain...",
+            "offline": "A connection could not be made to the Ethereum node."
+        }
+        , "error": {
+            "rpcConnection": "There was an problem connecting to Ethereums RPC interface"
+            , "transaction": "There was a problem completing the Ethereum transaction."
+            , "call": "There was a problem completing the data call"
+            , "event": "There was an error listening for an event"
+            , "insufficientGas": "There was not enough ether to send this transaction. Either the transaction gas is set too low, or you do not have enough gas."
+            , "balance": "There was an error getting the balance of this account"
+        }
+        , "buttons": {
+            "transact": "Transact"
+            , "call": "Call"
+            , "sendTransaction": "Send Transaction"
+        }
+        , "descriptions": {
+            "transaction": "An Ethereum transaction, if successful, be saved and stored in the blockchain, where you can access it at a later time. Each transaction costs a certain amount of ether (gas)."
+            , "call": "A call will request information from the Ethereum blockchain. A call does not change the state of the blockchain, it only accesses information."
+            , "ether": "Ether is Ethereum`s digital currency that propels the Ethereum ecosystem. Ether can be denominated in several ways such as 'ether', 'finney' and 'wei'. Ether is sent with transactions, like a transaction fee, so that others on the network will process your transaction and get a reward for doing so."
+            , "wei": "A wei is the most basic denomination in the Ethereum digital currency."
+            , "dapp": "A decentralized application or `dApp` is an application that uses the Ethereum ecosystem as it`s back-end and a light website like interface as its front-end."
+            , "provider": "The provider is the Ethereum node which is serving information to and receiving data from the decentralized applicaiton or dApp."
+            , "ethereum": "Ethereum is a decentralized application platform, that powers and incentivizes a more decentralized and distributed internet."
+        }
+        , "commonWords": {
+            "transact": "Transact"
+            , "blockchain": "blockchain"
+            , "request": "Request"
+            , "coinbase": "coinbase"
+            , "gas": "sas"
+            , "gasPrice": "sas price"
+            , "mining": "Mining"
+            , "processing": "Processing"
+            , "balance": "balance"
+            , "block": "block"
+            , "estimateGas": "estimate gas"
+            , "contract": "contract"
+            , "whisper": "Whisper"
+            , "swarm": "Swarm"
+            , "consensus": "consensus"
+            , "ethereum": "Ethereum"
+            , "address": "address"
+            , "peer": "peer"
+            , "peerCount": "peer count"
+            , "provider": "provider"
+            , "blockNumber": "block number"
+            , "identicon": "Identicon"
+            , "account": "account"
+            , "solidity": "Solidity"
+        }
+        , "denomination": {
+            "ether": "ether"
+            , "wei": "wei"
+            , "finney": "finney"
+        }
+    }
+}

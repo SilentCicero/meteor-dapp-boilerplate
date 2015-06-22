@@ -1,0 +1,11 @@
+{
+    "production" : {
+        "httpProvider": "http://localhost:8545"
+    },
+    "development" : {
+        "httpProvider": "http://localhost:8545"
+    },
+    "public" : {
+        "httpProvider": "http://localhost:8545"
+    }
+}

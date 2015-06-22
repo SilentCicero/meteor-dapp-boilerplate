@@ -7,48 +7,18 @@
 				, "view2": "View2"
 			}
 			, "headers": {
-				"identicon": "Identicon"
-				, "address": "Address"
-				, "balance": "Balance"
-				, "account": "Account"
-				, "solidity": "Solidity Code"
-				, "coinbase": "Coinbase"
-				, "listening": "Listening"
-				, "peerCount": "Peer Count"
-				, "blockNumber": "Block Numbr"
-				, "defaultBlock": "Default Block"
-				, "mining": "Mining"
-				, "gasPrice": "Gas Price"
 			}
 			, "copyright": "Copyright © My Ethereum ÐApp 2015. All Rights Reserved"
 		}
 		, "components": {
-			"balance": {
-				"header": "My Balance"
-				, "original": "Original Balance"
-			}
-			, "accounts": {
-				"header": "My Accounts"
-				, "description": "These are your Ethereum addresses. The identicons are generated based on the address value. Note, balance is static."			
-			}
-			, "multiplyContract": {
-				"header": "Multiply Contract"
-				, "description": "Create a new contract and interact with it through the api call method. Note, if the multiply result remains zero you may not have enough ETH."
-				, "create": "Create New Contract"
-				, "deployed": "The contract was deployed to this address"
-				, "placeholder": "Number To Multiply"
-			}
-			, "networkHealth": {
-				"header": "Network Health"			
-			}
+            "component": {
+                "header": "A Component Header"
+                , "body": "Body copy"
+            }
 		}
-		, "view1": {
-			"title": "View 1"
-			, "defaultName": "View1"
-		}
-		, "view2": {
-			"title": "View 2"
-			, "defaultName": "View2"
+		, "view": {
+			"title": "View"
+			, "defaultName": "View"
 		}
 	}
 }

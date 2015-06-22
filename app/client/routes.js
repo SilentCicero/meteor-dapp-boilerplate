@@ -24,28 +24,14 @@ Router.configure({
     }
 });
 
-// ROUTES
-
-/**
-The receive route, showing the wallet overview
-
-@method dashboard
-*/
-
+// Default Route
 Router.route('/', {
-    template: 'views_view1',
+    template: 'views_view',
     name: 'home'
 });
 
-Router.route('/view1', {
-    template: 'views_view1',
-    name: 'view1'
+// Route for View Template
+Router.route('/view', {
+    template: 'views_view',
+    name: 'view'
 });
-
-Router.route('/view2', {
-    template: 'views_view2',
-    name: 'view2'
-});
-
-
-

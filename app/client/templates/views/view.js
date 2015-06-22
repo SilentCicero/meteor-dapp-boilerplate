@@ -11,7 +11,7 @@ The view1 template
 @constructor
 */
 
-Template['views_view1'].helpers({
+Template['views_view'].helpers({
     /**
     Get the name
 
@@ -23,6 +23,6 @@ Template['views_view1'].helpers({
     }
 });
 
-Template['views_view1'].created = function(){
+Template['views_view'].created = function(){
 	Meta.setSuffix(TAPi18n.__("dapp.view1.title"));
 };
