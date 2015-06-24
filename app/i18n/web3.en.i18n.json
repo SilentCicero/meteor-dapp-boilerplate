@@ -5,12 +5,17 @@
             "offline": "A connection could not be made to the Ethereum node."
         }
         , "error": {
-            "rpcConnection": "There was an problem connecting to Ethereums RPC interface"
+            "rpcConnection": "There was an problem connecting to Ethereums RPC interface."
+            , "web3Error": "There was an error interfacing with the web3."
             , "transaction": "There was a problem completing the Ethereum transaction."
             , "call": "There was a problem completing the data call"
             , "event": "There was an error listening for an event"
             , "insufficientGas": "There was not enough ether to send this transaction. Either the transaction gas is set too low, or you do not have enough gas."
+            , "insufficientFunds": "The account you have selected has insufficient funds to complete the transaction."
+            , "invalidPassword": "The password you entered is invalid."
+            , "incorrectPassword": "The password you entered is incorrect."
             , "balance": "There was an error getting the balance of this account"
+            , "insufficientRights": "You do not have the valid private keys for the account you are attempting to use. Please use an account you have the private keys too."
         }
         , "buttons": {
             "transact": "Transact"
@@ -25,8 +30,12 @@
             , "dapp": "A decentralized application or `dApp` is an application that uses the Ethereum ecosystem as it`s back-end and a light website like interface as its front-end."
             , "provider": "The provider is the Ethereum node which is serving information to and receiving data from the decentralized applicaiton or dApp."
             , "ethereum": "Ethereum is a decentralized application platform, that powers and incentivizes a more decentralized and distributed internet."
+            , "web3": "The phrase or term 'web3' means the decentralized web, where the apps or services that use web3 use or are related to some kind of decentralized technology."
+            , "sha3": "A SHA3 hash is a cryptographic hash of some value that is often used to verify and validate the integratity of a certain set of data."
+            , "encryption": "Encryption is commonly used in Ethereum dApp's and digital currency. It is used to both verify transactions, secure private data, and build secure decentralized and distributed ecosystems on the internet."
+            
         }
-        , "commonWords": {
+        , "commonTerms": {
             "transact": "Transact"
             , "blockchain": "blockchain"
             , "request": "Request"
@@ -45,6 +54,8 @@
             , "ethereum": "Ethereum"
             , "address": "address"
             , "peer": "peer"
+            , "web3": "Web3"
+            , "backup": "Backup"
             , "peerCount": "peer count"
             , "provider": "provider"
             , "blockNumber": "block number"

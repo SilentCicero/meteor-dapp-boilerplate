@@ -19,8 +19,8 @@ Router.configure({
     layoutTemplate: 'layout_main',
     notFoundTemplate: 'layout_notFound',
     yieldRegions: {
-        'layout_header': {to: 'header'}
-        , 'layout_footer': {to: 'footer'}
+        'layout_header': {to: 'header'},
+        'layout_footer': {to: 'footer'}
     }
 });
 

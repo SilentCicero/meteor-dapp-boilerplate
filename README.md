@@ -1,4 +1,4 @@
-# meteor-dapp-boilerplate
+# meteor-dapp-boilerplate (
 
 A starting point for decentralized MeteorJS applications. Includes Ethereum.js, iron-router, Bootstrap 3, Font Awesome, LESS and more.
 

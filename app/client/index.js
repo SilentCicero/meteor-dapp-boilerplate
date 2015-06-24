@@ -11,14 +11,11 @@ if(!LocalStore.get('etherUnit'))
 
 // Set Session default values for components
 if (Meteor.isClient) {
-	Session.setDefault('balance', '0');
-	Session.setDefault('address', 0);
-	Session.setDefault('multiplyResult', '0');
-	Session.setDefault('multiplyValue', '0');
+	Session.setDefault('someSession', 'someValue');
 }
 
 // Fired when Meteor boots
-Meteor.startup(function() {
+Meteor.startup(function() {    
     // Set Provider
     // use Meteor.settings.public.httpProvider
     web3.setProvider(new web3.providers.HttpProvider("http://192.168.0.15:8545"));
