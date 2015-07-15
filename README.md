@@ -4,12 +4,14 @@ A starting point for decentralized MeteorJS applications. Includes Ethereum.js, 
 
 **Based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet). Please note that this boilerplate is still in Alpha.
 
+* [Alpha](#alpha)
 * [Included Packages](#included-packages)
 * [Installation](#installation)
 * [Deployment](#deployment)
 * [File Structure](#file-structure)
 * [Bootstrap and Less](#bootstrap-and-less)
 * [Favicons and Touch Icons](#favicons-and-touch-icons)
+* [License](#license)
 
 ## <a name="included-packages"></a> Included Packages
 
@@ -42,31 +44,29 @@ A starting point for decentralized MeteorJS applications. Includes Ethereum.js, 
   * [frozeman:storage](https://github.com/frozeman/meteor-storage)
   * [frozeman:template-var](https://github.com/frozeman/meteor-template-var)
   * [frozeman:reactive-timer](https://github.com/frozeman/meteor-reactive-timer)
+  
+## <a name="alpha"></a> Hosted Alpha
+
+http://meteor-dapp-boilerplate.meteor.com
 
 ## <a name="installation"></a> Installation
 
-1. Clone this repo to `<yourapp>`
+Clone this repo
 
-  `git clone https://github.com/SilentCicero/meteor-dapp-boilerplate.git <yourapp>`
+    $ git clone http://github.com/SilentCicero/meteor-dapp-boilerplate
+    
+Create an account with geth (create a passphrase):
 
-2. Remove `.git`
+    $ geth account new
 
-  `cd <yourapp>/app && rm -rf .git`
+Start a local geth node instace (then hit 'enter' to promt passphrase input):
 
-3. Start coding!
+    $ geth --rpc --rpcaddr="0.0.0.0" --rpccorsdomain="*" --mine --unlock=0 --verbosity=5 --maxpeers=0 --minerthreads="4"
 
-## <a name="development"></a> Development
+Start the app using Meteor
 
-Start an eth node open the http://localhost:3000 in *mist*, *mix* or *alethzero* or run a CPP node as follows:
-
-    $ eth -j -b // for a mining node: $ eth -j -b -f -n no -m yes
-
-Start your app using meteor
-
-    $ cd <yourapp>/app
+    $ cd meteor-dapp-boilerplate/app
     $ meteor
-
-Go to http://localhost:3000
 
 ## <a name="file-structure"></a> File Structure
 
@@ -105,3 +105,7 @@ The reason that this is done is to avoid any issues when the LESS files are comp
 ## <a name="favicons-and-touch-icons"></a> Favicons and Touch Icons
 
 Upload your image to http://realfavicongenerator.net/ and place the resulting images in `public/images/favicons`
+
+## <a name="license"></a> License
+
+Released under the MIT License, see LICENSE file.
