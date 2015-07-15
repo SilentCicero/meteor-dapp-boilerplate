@@ -23,6 +23,7 @@ Template['views_view1'].helpers({
     }
 });
 
+// When the template is created
 Template['views_view1'].created = function(){
 	Meta.setSuffix(TAPi18n.__("dapp.view1.title"));
 };

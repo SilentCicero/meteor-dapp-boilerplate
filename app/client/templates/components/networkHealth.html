@@ -1,17 +1,63 @@
 <template name="components_networkHealth">
-	<div class="panel panel-default panel-dapp panel-health">
-	  <div class="panel-heading">{{i18n 'dapp.components.networkHealth.header'}}</div>
-	  <div class="panel-body">
-		<table class="table">
-			<tr><td class="heading">Web3 Obj</td><td>{{web3Exists}}</td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.coinbase'}}</td><td><input type="text" value="{{coinbase}}" class="web3_address" /></td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.listening'}}</td><td>{{listening}}</td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.peerCount'}}</td><td>{{peerCount}}</td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.gasPrice'}}</td><td>{{gasPrice}}</td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.blockNumber'}}</td><td>{{blockNumber}}</td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.defaultBlock'}}</td><td>{{defaultBlock}}</td></tr>
-			<tr><td class="heading">{{i18n 'dapp.app.headers.mining'}}</td><td>{{mining}}</td></tr>			
-		</table>
-	  </div>
+    <div class="panel panel-default panel-dapp panel-health">
+        <div class="panel-heading">
+            {{i18n 'dapp.components.networkHealth.header'}}
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <td class="heading">
+                        Web3 Obj
+                    </td>
+                    <td>{{web3Exists}}</td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.coinbase'}}
+                    </td>
+                    <td>
+                        <input type="text" 
+                               value="{{coinbase}}" 
+                               class="web3_address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.listening'}}
+                    </td>
+                    <td>{{listening}}</td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.peerCount'}}
+                    </td>
+                    <td>{{peerCount}}</td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.gasPrice'}}
+                    </td>
+                    <td>{{gasPrice}}</td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.blockNumber'}}
+                    </td>
+                    <td>{{blockNumber}}</td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.defaultBlock'}}
+                    </td>
+                    <td>{{defaultBlock}}</td>
+                </tr>
+                <tr>
+                    <td class="heading">
+                        {{i18n 'dapp.app.headers.mining'}}
+                    </td>
+                    <td>{{mining}}</td>
+                </tr>			
+            </table>
+        </div>
     </div>
 </template>

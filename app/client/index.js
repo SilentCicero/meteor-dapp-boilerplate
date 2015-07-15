@@ -12,11 +12,7 @@ if(!LocalStore.get('etherUnit'))
 // Set Session default values for components
 if (Meteor.isClient) {
 	Session.setDefault('balance', '0');
-	Session.setDefault('address', 0);
-	Session.setDefault('multiplyResult', '0');
-	Session.setDefault('multiplyValue', '0');
 }
-
 
 Meteor.startup(function() {
 
@@ -40,6 +36,7 @@ Meteor.startup(function() {
         }
     }
 
+    // Setup Moment and Numeral i18n support
     Tracker.autorun(function(){
         if(_.isString(TAPi18n.getLanguage())) {
             moment.locale(TAPi18n.getLanguage().substr(0,2));

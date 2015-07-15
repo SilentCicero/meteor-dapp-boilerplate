@@ -1,9 +1,12 @@
 <template name="layout_main">
-   {{> yield region="header"}}
+    <!-- The dynamic page header -->
+    {{> yield region="header"}}
 
 	<!-- content -->
 	<main class="container-fluid">
 		{{> yield}}
 	</main>
-   {{> yield region="footer"}}
+    
+    <!-- The dynamic page footer -->
+    {{> yield region="footer"}}
 </template>

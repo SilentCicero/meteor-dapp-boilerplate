@@ -38,6 +38,7 @@ _.extend(Template['components_balance'], {
             });
 		}, 1 * 1000);
 	},
+    
 
 	/**
     On Template Destroyed

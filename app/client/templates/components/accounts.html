@@ -1,6 +1,8 @@
 <template name="components_accounts">
     <div class="panel panel-default panel-dapp">
-        <div class="panel-heading">{{i18n 'dapp.components.accounts.header'}}</div>
+        <div class="panel-heading">
+            {{i18n 'dapp.components.accounts.header'}}
+        </div>
         <div class="panel-body">
             <p>{{i18n 'dapp.components.accounts.description'}}</p>
         </div>
@@ -18,8 +20,13 @@
                     {{#each accounts}}
                     <tr>
                         <td>{{number}}</td>
-                        <td>{{> dapp_identicon identity=address class="dapp-small"}}</td>
-                        <td> <input type="text" value="{{address}}" class="web3_address"/></td><td>{{toEth balance}} ether</td>
+                        <td>
+                            {{> dapp_identicon identity=address class="dapp-small"}}
+                        </td>
+                        <td> 
+                            <input type="text" value="{{address}}" class="web3_address"/>
+                        </td>
+                        <td>{{fromWei balance 'ether'}} ether</td>
                     </tr>
                     {{/each}}
                 </tbody>

@@ -16,6 +16,7 @@ A simple template helper to log objects in the console.
 
 @method (debug)
 **/
+
 Template.registerHelper('debug', function(object){
     console.log(object);
 });
@@ -33,6 +34,7 @@ Formats a timestamp to any format given.
 //@param {Boolean} realTime    Whether or not this helper should re-run every 10s
 @return {String} The formated time
 **/
+
 Template.registerHelper('formatTime', Helpers.formatTime);
 
 
@@ -46,6 +48,7 @@ Formats a number.
 @param {String} format       the format string
 @return {String} The formatted number
 **/
+
 Template.registerHelper('formatNumber', function(number, format){
     if(format instanceof Spacebars.kw)
         format = null;
@@ -62,4 +65,3 @@ Template.registerHelper('formatNumber', function(number, format){
     if(_.isFinite(number))
         return numeral(number).format(format);
 });
-

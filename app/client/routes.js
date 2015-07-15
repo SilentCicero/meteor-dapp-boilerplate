@@ -32,20 +32,20 @@ The receive route, showing the wallet overview
 @method dashboard
 */
 
+// Default route
 Router.route('/', {
     template: 'views_view1',
     name: 'home'
 });
 
+// Route for view1
 Router.route('/view1', {
     template: 'views_view1',
     name: 'view1'
 });
 
+// Route for view2
 Router.route('/view2', {
     template: 'views_view2',
     name: 'view2'
 });
-
-
-
