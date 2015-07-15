@@ -30,7 +30,7 @@ _.extend(Template['components_balance'], {
     @method (created)
     */
 
-	'created': function() {
+	'rendered': function() {
         var coinbase = web3.eth.coinbase;
 		this.updateBalance = Meteor.setInterval(function() {
 			web3.eth.getBalance(coinbase, function(err, result){

@@ -44,13 +44,10 @@ var abiArray = [
 ];
 
 // Construct Multiply Contract Object and contract instance
-var MultiplyContract = web3.eth.contract(abiArray),
-    watch = web3.eth.filter('latest'),
+var MultiplyContract,
+    watch,
     contractMined = false,
-	contract;
-
-// Set coinbase as the default account
-web3.eth.defaultAccount = web3.eth.coinbase;
+    contract;
 
 // When the template is rendered
 Template['components_multiplyContract'].rendered = function(){
@@ -81,6 +78,16 @@ Template['components_multiplyContract'].events({
 	"click .btn-default": function(event, template){ // Create Contract
         TemplateVar.set('state', {isMining: true});
         
+        // Set coinbase as the default account
+        web3.eth.defaultAccount = web3.eth.coinbase;
+        
+        // Watch Filter
+        watch = web3.eth.filter('latest');
+        
+        // Setup MultiplyContract object
+        MultiplyContract = web3.eth.contract(abiArray);
+        
+        // Deploy new MultiplyContract instance to the Ethereum blockchain
         MultiplyContract.new({data: code, gas: 300000, from: web3.eth.accounts[0]}, function(err, contractInstance){
             if(err) {
                 TemplateVar.set(template, 'state', {isError: true, error: String(err)});

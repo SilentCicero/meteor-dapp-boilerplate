@@ -11,9 +11,11 @@ The accounts template
 @constructor
 */
 
-Meteor.startup(function () {
+Template["components_accounts"].rendered = function(){
 	// Insert accounts into collection
 	var accounts = web3.eth.accounts;
+    
+    // Get accounts
 	if(!_.isArray(accounts))
         return;
     
@@ -30,7 +32,7 @@ Meteor.startup(function () {
         
         Accounts.upsert({address: address}, {number: count, address: address, balance: web3.eth.getBalance(address).toString(10), createdAt: new Date()});
     });
-});
+};
 
 Template['components_accounts'].helpers({
 	/**
