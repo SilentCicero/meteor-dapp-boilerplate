@@ -1,0 +1,33 @@
+{
+	"production" : {
+		"geth": {
+			"rpcaddr": "localhost",
+			"rpcport": 8545,
+			"rpcwhitelist": "*",
+			"minerthreads": 1,
+			"datadir": "/tmp/embark",
+			"rpccorsdomain": "*",
+			"gasprice": 10000000000000,
+			"console": "false",
+			"unlock": 0,
+			"maxpeers": 0,
+		}
+	},
+	"development" : {
+		"geth": {
+			"rpcaddr": "localhost",
+			"rpcport": 8545,
+			"rpcwhitelist": "*",
+			"minerthreads": 1,
+			"datadir": "/tmp/embark",
+			"rpccorsdomain": "*",
+			"gasprice": 10000000000000,
+			"console": "false",
+			"unlock": 0,
+			"maxpeers": 0,
+		},
+		"name": "Boilerplate"
+	},
+	"public" : {
+	}
+}

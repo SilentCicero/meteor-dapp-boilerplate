@@ -13,6 +13,7 @@ The Helpers class containing helper functions
 
 Helpers = {};
 
+
 /**
 Reruns functions reactively, based on an interval. Use it like so:
 

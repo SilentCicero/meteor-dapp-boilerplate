@@ -46,13 +46,12 @@ var abiArray = [
 // Construct Multiply Contract Object and contract instance
 var MultiplyContract,
     watch,
-    contractMined = false,
-    contract;
+    contractInstance;
 
 // When the template is rendered
-Template['components_multiplyContract'].rendered = function(){
+Template['components_multiplyContract'].onRendered(function(){
     TemplateVar.set('state', {isInactive: true});
-};
+});
 
 Template['components_multiplyContract'].helpers({
 
@@ -87,43 +86,52 @@ Template['components_multiplyContract'].events({
         // Setup MultiplyContract object
         MultiplyContract = web3.eth.contract(abiArray);
         
-        // Deploy new MultiplyContract instance to the Ethereum blockchain
-        MultiplyContract.new({data: code, gas: 300000, from: web3.eth.accounts[0]}, function(err, contractInstance){
-            if(err) {
-                TemplateVar.set(template, 'state', {isError: true, error: String(err)});
-                return;
-            }
+        // assemble the tx object w/ default gas value
+        var transactionObject = {
+            data: code, 
+            gasPrice: web3.eth.gasPrice,
+            gas: 500000,
+            from: web3.eth.accounts[0]
+        };
+        
+        // estimate gas cost then transact new MultiplyContract
+        web3.eth.estimateGas(transactionObject, function(err, estimateGas){
+            // multiply by 10 hack for testing
+            if(!err)
+                transactionObject.gas = estimateGas * 10;
             
-            contract = contractInstance;            
-            watch.watch(function (err, hash) {
-                var block = web3.eth.getBlock(hash, true); 
-                contractMined = block.transactions.reduce(function (mined, th) {
-                    // TODO: compiled code do not have 0x prefix
-                    return mined || (th.from === web3.eth.defaultAccount && th.input.indexOf(code) !== -1);
-                }, false);
+            MultiplyContract.new(transactionObject, 
+                                 function(err, contract){
+                if(err)
+                    return TemplateVar.set(template, 'state', {isError: true, error: String(err)});
                 
-                if (contractMined)
+                if(contract.address) {
                     TemplateVar.set(template, 'state', {isMined: true, address: contract.address, source: source});
+                    contractInstance = contract;
+                }
             });
         });
 	},
 
+    
 	/**
 	On Multiply Number Input keyup
 	
 	@event (keyup #multiplyValue)
 	*/
 
-	"keyup #multiplyValue": function(event, template){ // Call Contract
+	"keyup #multiplyValue": function(event, template){
+        // the input value
 		var value = template.find("#multiplyValue").value;  
         
-		contract.multiply.call(value, function(err, result){
+        // call MultiplyContract method `multiply` which should multiply the `value` by 7
+		contractInstance.multiply.call(value, function(err, result){
             TemplateVar.set(template, 'multiplyResult'
                             , result.toNumber(10));
             
             if(err)
                 TemplateVar.set(template, 'multplyResult'
                                 , String(err));
-        }); // Call Contract and Multply Given Value
+        });
 	},
 });

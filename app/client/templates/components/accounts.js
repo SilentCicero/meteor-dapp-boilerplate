@@ -4,14 +4,7 @@ Template Controllers
 @module Templates
 */
 
-/**
-The accounts template
-
-@class [template] components_accounts
-@constructor
-*/
-
-Template["components_accounts"].rendered = function(){
+var refresh = function(){  
 	// Insert accounts into collection
 	var accounts = web3.eth.accounts;
     
@@ -34,6 +27,34 @@ Template["components_accounts"].rendered = function(){
     });
 };
 
+/**
+The accounts template
+
+@class [template] components_accounts
+@constructor
+*/
+
+// when the template is rendered
+Template["components_accounts"].onRendered(refresh);
+
+// template events
+Template['components_accounts'].events({
+	/**
+    Convert Wei to Ether Values
+
+    @method (fromWei)
+    */
+
+	'click .btn-refresh': function(){
+        // remove all accounts
+        Accounts.remove({});
+        
+        // refresh the accounts
+        refresh();
+    },
+});
+
+// template handlebar helper methods
 Template['components_accounts'].helpers({
 	/**
     Convert Wei to Ether Values

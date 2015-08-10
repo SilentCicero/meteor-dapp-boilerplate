@@ -14,8 +14,10 @@ tap:i18n
 zimme:iron-router-active
 yasinuslu:blaze-meta
 numeral:numeral
+ethereum:accounts
 ethereum:elements
 ethereum:tools
+ethereum:blocks
 ethereum:web3
 frozeman:persistent-minimongo
 frozeman:storage
@@ -27,3 +29,4 @@ matb33:collection-hooks
 raix:handlebar-helpers
 chuangbo:cookie
 markdown
+#mike:mocha

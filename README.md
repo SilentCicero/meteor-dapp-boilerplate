@@ -11,6 +11,8 @@ A starting point for decentralized MeteorJS applications. Includes Ethereum.js, 
 * [File Structure](#file-structure)
 * [Bootstrap and Less](#bootstrap-and-less)
 * [Favicons and Touch Icons](#favicons-and-touch-icons)
+* [Private Network](#private-network)
+* [Unit Testing](#unit-testing)
 * [License](#license)
 
 ## <a name="included-packages"></a> Included Packages
@@ -31,11 +33,15 @@ A starting point for decentralized MeteorJS applications. Includes Ethereum.js, 
   * [ethereum:elements](https://github.com/ethereum/meteor-package-elements)
   * [ethereum:tools](https://github.com/ethereum/meteor-package-tools)
   * [ethereum:js](https://github.com/ethereum/ethereum.js)
+  * [ethereum:accounts](https://github.com/ethereum/meteor-package-accounts/)
+  * [ethereum:blocks](https://github.com/ethereum/meteor-package-blocks/)
 * Numbers:
   * [3stack:bignumber](https://github.com/MikeMcl/bignumber.js/)
   * [chance.js](http://chancejs.com/)
 * Language:
   * [tap:i18n](https://github.com/TAPevents/tap-i18n)
+* Unit Testing:
+  * [mike:mocha](https://github.com/mad-eye/meteor-mocha-web/)
 * Misc:
   * [Moment.js](http://momentjs.com/)
   * [chuangbo:cookie](https://github.com/chuangbo/meteor-cookie)
@@ -105,6 +111,26 @@ The reason that this is done is to avoid any issues when the LESS files are comp
 ## <a name="favicons-and-touch-icons"></a> Favicons and Touch Icons
 
 Upload your image to http://realfavicongenerator.net/ and place the resulting images in `public/images/favicons`
+
+## <a name="private-network"></a> Private Network
+
+If you would like to test your dApp with a local private Ethereum node, a `test-genesis.json` file is provided in the `app` folder. This is an example command line to run your own private network:
+
+    $ geth --rpc --rpccorsdomain "*" --genesis test-genesis.json --networkid 1234 --mine --unlock 0
+
+## <a name="unit-testing"></a> Unit Testing
+
+All tests are stored in the `app/tests` directory. By default the [Mocha](https://mochajs.org/) testing framework is not installed, but some example tests are provided with this boilerplate. In order to activate Mocha/Velocity you must edit `app/.meteor/packages` and uncomment `#mike:mocha` to `mike:mocha`. A testing button will appear on the top right hand corner of your dApp. Remember to remove the mocha package for deployment and production.
+
+Add Mocha/Velocity
+
+    $ meteor add mike:mocha
+    
+Remove Mocha/Velocity
+
+    $ meteor remove mike:mocha
+
+Please refer to this page for more on unit testing in Meteor: https://velocity.readme.io/
 
 ## <a name="license"></a> License
 

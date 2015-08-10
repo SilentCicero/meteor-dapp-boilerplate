@@ -11,6 +11,6 @@ The view2 template
 @constructor
 */
 
-Template['views_view2'].created = function() {
+Template['views_view2'].onCreated(function() {
 	  Meta.setSuffix(TAPi18n.__("dapp.view2.title"));
-}
+});
