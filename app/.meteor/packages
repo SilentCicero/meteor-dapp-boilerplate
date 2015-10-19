@@ -28,7 +28,6 @@ matb33:collection-hooks
 raix:handlebar-helpers
 chuangbo:cookie
 markdown
-#mike:mocha
 standard-minifiers
 meteor-base
 mobile-experience
@@ -44,3 +43,4 @@ ejson
 spacebars
 check
 silentcicero:solc
+mike:mocha
