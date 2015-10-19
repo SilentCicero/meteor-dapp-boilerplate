@@ -13,11 +13,11 @@ tap:i18n
 zimme:iron-router-active
 yasinuslu:blaze-meta
 numeral:numeral
-ethereum:accounts
+ethereum:web3
+ethereum:accounts@0.3.5
 ethereum:elements
 ethereum:tools
 ethereum:blocks
-ethereum:web3
 frozeman:persistent-minimongo
 frozeman:storage
 frozeman:template-var
@@ -43,3 +43,4 @@ random
 ejson
 spacebars
 check
+silentcicero:solc

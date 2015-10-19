@@ -29,11 +29,11 @@ diff-sequence@1.0.1
 ecmascript@0.1.5
 ecmascript-collections@0.1.6
 ejson@1.0.7
-ethereum:accounts@0.3.4
-ethereum:blocks@0.1.9
-ethereum:elements@0.5.3
+ethereum:accounts@0.3.6
+ethereum:blocks@0.2.2
+ethereum:elements@0.5.6
 ethereum:tools@0.2.9
-ethereum:web3@0.13.0
+ethereum:web3@0.14.1
 fastclick@1.0.7
 frozeman:animation-helper@0.2.6
 frozeman:persistent-minimongo@0.1.6
@@ -86,6 +86,8 @@ reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
 session@1.1.1
+silentcicero:solc@0.2.4
+silentcicero:solc-compiler@0.1.9
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 standard-minifiers@1.0.1

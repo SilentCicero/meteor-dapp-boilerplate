@@ -4,29 +4,6 @@ Template Controllers
 @module Templates
 */
 
-var refresh = function(){  
-	// Insert accounts into collection
-	var accounts = web3.eth.accounts;
-    
-    // Get accounts
-	if(!_.isArray(accounts))
-        return;
-    
-    // If no Accounts collection is available, quit
-    if(_.isUndefined(Accounts))
-        return;
-    
-    // start a count for indexing and storage
-    var count = 0;
-
-    // add each account to the accounts collection
-    _.each(accounts, function(address){
-        count += 1;
-        
-        Accounts.upsert({address: address}, {number: count, address: address, balance: web3.eth.getBalance(address).toString(10), createdAt: new Date()});
-    });
-};
-
 /**
 The accounts template
 
@@ -35,23 +12,11 @@ The accounts template
 */
 
 // when the template is rendered
-Template["components_accounts"].onRendered(refresh);
+Template["components_accounts"].onRendered(function(){
+});
 
 // template events
 Template['components_accounts'].events({
-	/**
-    Convert Wei to Ether Values
-
-    @method (fromWei)
-    */
-
-	'click .btn-refresh': function(){
-        // remove all accounts
-        Accounts.remove({});
-        
-        // refresh the accounts
-        refresh();
-    },
 });
 
 // template handlebar helper methods
@@ -74,6 +39,6 @@ Template['components_accounts'].helpers({
     */
 
 	'accounts': function(){
-		return Accounts.find({});	
+		return EthAccounts.find({});
 	},
 });
