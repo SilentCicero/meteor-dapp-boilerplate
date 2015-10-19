@@ -22,8 +22,7 @@ var source = "" +
 "}\n";
 
 // Construct Multiply Contract Object and contract instance
-var watch,
-    contractInstance;
+var contractInstance;
 
 // When the template is rendered
 Template['components_multiplyContract'].onRendered(function(){
@@ -56,9 +55,6 @@ Template['components_multiplyContract'].events({
         
         // Set coinbase as the default account
         web3.eth.defaultAccount = web3.eth.coinbase;
-        
-        // Watch Filter
-        watch = web3.eth.filter('latest');
         
         // assemble the tx object w/ default gas value
         var transactionObject = {
