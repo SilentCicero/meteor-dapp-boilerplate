@@ -16,7 +16,7 @@ numeral:numeral
 ethereum:web3
 ethereum:accounts@0.3.5
 ethereum:elements
-#ethereum:tools
+ethereum:tools
 ethereum:blocks
 frozeman:persistent-minimongo
 frozeman:storage
@@ -43,8 +43,4 @@ ejson
 spacebars
 check
 silentcicero:solc
-amr:parsley.js
-tsega:bootstrap3-datetimepicker
-practicalmeteor:chai
-#sanjo:jasmine
-#velocity:html-reporter
+mike:mocha
