@@ -10,38 +10,315 @@
           filter: blur(@amount);
 }
 
-// Custom Panel Modification Mixins
-.panel-dapp{
-	.panel-heading{
-		font-size: @font-size-h3;
-	}
-
-	.table{
-		thead{ 
-			td{	
-				font-weight: bold;
-			}
-		}
-	}
+.btn-default {
+	font-transform: none;
 }
 
-// Custom Class for Health Panel
-.panel-health{
-	.table{
-		td{
-			width: 50%;
-			padding: 10px;
-		}
-	}
-
-	.heading{
-		text-align: right;
-		font-weight: bold;
-	}
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+ 
+.topnav {
+    font-size: 14px; 
 }
 
-// For a web3 address wrapper input field.
-.web3_address {
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(/images/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(/images/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*!
+ * WeiFund - CSS
+ * Code licensed under the MIT License.
+ */
+
+#new_campaign_form
+{
+	min-height: 650px;
+}
+
+@media screen and (max-width: 1000px){
+   #new_campaign_form
+   {
+	min-height: 350px;
+   }
+}
+
+	
+.light
+{
+	font-weight: lighter;
+}
+
+.crowdfundrr_C
+{
+	color: #FF6699;
+}
+	
+.categories
+{
+    a {
+        margin-top: 10px;
+    }
+}
+
+#campaign_details ul
+{
+	margin-top: 20px;
+}
+
+#campaign_details li
+{
+	margin-bottom: 15px;
+}
+
+.cf_d_col
+{
+	//min-width: 223px;
+    
+    min-height: 450px;
+}
+
+.cf-embed-link
+{
+	border: 3px solid #999; 
+	
+	border-radius: 5px; 
+	
+	margin-right: 10px;
+	
+	cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.bg-muted {
+    background-color: @text-muted;
+}
+
+.details li
+{
+    padding: 10px;
+}
+
+@media only screen 
+and (max-width : 950px) 
+{
+    .campaignDetails 
+    {
+        margin-top: 50px;
+    }
+}
+
+.low-gutter {
+    padding: 5px;
+}
+
+.pocketbook {
+    margin-top: 60px;
+
+    .pocketbook-accounts-header {
+        margin-bottom: 30px;
+    }
+}
+
+.parsley-errors-list {
+	li {
+		display: table-cell;
+
+		list-style-type: none;
+		
+		margin-top: 10px;
+		
+		padding-top: 10px;
+		
+		font-size: 13px;
+		
+		color: @text-muted;
+	}
+	
+	padding-left: 10px;
+}
+
+.blur {
+	background-color: rgba(0,0,0,.5);
+	
+	z-index: 10000;
+	
+	position: fixed;
+	
+	display: block;
+	
+	top: 0px;
+	
+	bottom: 0px;
+	
+	right: 0px;
+	
+	left: 0px;
+}
+
+.dialogWindow {
+	width: 65%;
+	
+	background-color: rgba(255,255,255,.95);
+	
+	padding: 20px;
+	
+	margin: 0px auto;
+	
+	display: block;
+	
+	z-index: 11000;
+	
+	min-height: 400px;
+	
+	overflow-y: auto;
+	
+	margin-top: 40px;
+	
+	position: absolute;
+	
+	left: 17.5%;
+	
+	top: 10%;
+}
+
+.invisafield {
     background: none; 
     
     border: none; 
@@ -51,12 +328,41 @@
     outline: none; 
     
     overflow: hidden; 
+	
+	font-family: inherit;
+	
+	font-size: inherit;
     
-    width: 100%; 
-    
-    white-space:nowrap;    
+    white-space: nowrap;    
     
     text-overflow: ellipsis; 
     
     display: inline-block;
+	
+	line-height: inherit;
+	
+	height: auto;
+	
+	width: 100%;
+	
+	&:hover {
+    	display: inline-block;
+   
+    	white-space: normal;
+		  /* These are technically the same, but use both */
+		  overflow-wrap: break-word;
+		  word-wrap: break-word;
+
+		  -ms-word-break: break-all;
+		  /* This is the dangerous one in WebKit, as it breaks things wherever */
+		  word-break: break-all;
+		  /* Instead use this non-standard one: */
+		  word-break: break-word;
+
+		  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+		  -ms-hyphens: auto;
+		  -moz-hyphens: auto;
+		  -webkit-hyphens: auto;
+		  hyphens: auto;
+    }
 }

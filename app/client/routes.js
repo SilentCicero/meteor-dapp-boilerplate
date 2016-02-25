@@ -11,10 +11,15 @@ The app routes
 @constructor
 */
 
-// Change the URLS to use #! instead of real paths
-// Iron.Location.configure({useHashPaths: true});
+/*objects = {
+	contracts: {
+		WeiFund: WeiFund.at(''),
+		WeiHash: WeiHash.at(''),
+		PersonaRegistry: PersonaRegistry.at(''),
+	},
+};*/
 
-// Router defaults
+// Router configuration defaults
 Router.configure({
     layoutTemplate: 'layout_main',
     notFoundTemplate: 'layout_notFound',
@@ -26,26 +31,91 @@ Router.configure({
 
 // ROUTES
 
-/**
-The receive route, showing the wallet overview
-
-@method dashboard
-*/
-
-// Default route
+// When no route is selected, go home
 Router.route('/', {
-    template: 'views_view1',
+    template: 'views_home',
     name: 'home'
 });
 
-// Route for view1
-Router.route('/view1', {
-    template: 'views_view1',
-    name: 'view1'
+// The administrator panel route
+Router.route('/admin', {
+    template: 'views_admin',
+    name: 'admin'
 });
 
-// Route for view2
-Router.route('/view2', {
-    template: 'views_view2',
-    name: 'view2'
+// The discover page, when no category is selected
+Router.route('/discover', {
+    template: 'views_discover',
+	data: function (){
+        _category = false;
+        
+		templateData = {
+			category: _category
+		};
+        
+		return templateData;
+	},
+    name: 'discover'
+});
+
+// The discover page routing, when the category is selected
+Router.route('/discover/:_category', {
+	template: 'views_discover',
+	data: function (){
+		_category = decodeURIComponent(this.params._category);
+        category = Categories.findOne({name: _category});
+		templateData = {
+			category: false,
+		};
+        
+        if(!_.isUndefined(category))
+        	templateData.category = category.id;
+        
+		return templateData;
+	},
+});
+
+// The tracker page routing, when no ID is selected
+Router.route('/campaign/', {
+    template: 'views_home',
+});
+
+// The tracker page routing, when no ID is selected
+Router.route('/start', {
+    template: 'views_start',
+});
+
+// The tracker page routing, when no ID is selected
+Router.route('/about', {
+    template: 'views_about',
+});
+
+// The tracker page routing, when no ID is selected
+Router.route('/setup', {
+    template: 'components_setup',
+});
+
+// The tracker page routing, when no ID is selected
+Router.route('/disclaimer', {
+    template: 'components_disclaimer',
+});
+
+// The tracker page routing, when no ID is selected
+Router.route('/token', {
+    template: 'views_token',
+});
+
+// The tracker page routing, when a campaign ID is selected
+Router.route('/campaign/:_id', {
+    template: 'views_campaign',
+	data: function (){
+        _id = parseInt(this.params._id);
+        
+		templateData = {
+			id: _id,
+		};
+        
+		return templateData;
+	},
+    name: 'campaign'
 });

@@ -1,7 +1,19 @@
+// The WeiFund Categories
+Categories = new Mongo.Collection('CategorieS', {connection: null});
+new PersistentMinimongo(Categories);
 
-// Basic (local) collections
-// we use {connection: null} to prevent them from syncing with our not existing Meteor server
+// The WeiFund Campaigns
+Campaigns = new Mongo.Collection('campaigns', {connection: null});
+new PersistentMinimongo(Campaigns);
 
-// A test persitent collection
-MyCollection = new Mongo.Collection('mydb', {connection: null});
-new PersistentMinimongo(MyCollection);
+// The WeiFund Campaigns
+Contributors = new Mongo.Collection('contributors', {connection: null});
+new PersistentMinimongo(Contributors);
+
+// For Holding Account names
+Personas = new Mongo.Collection('personas', {connection: null});
+new PersistentMinimongo(Personas);
+
+// For Holding Backup IPFS Data
+IPFS_Backup = new Mongo.Collection('ipfs_backup', {connection: null});
+new PersistentMinimongo(IPFS_Backup);

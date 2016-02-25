@@ -1,137 +1,94 @@
-# meteor-dapp-boilerplate
+# WeiFund
 
-A starting point for decentralized MeteorJS applications. Includes Ethereum.js, iron-router, Bootstrap 3, Font Awesome, LESS and more.
+A decentralized, fully transparent, open source crowdfunding DApp built on Ethereum.
 
-**Based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet). Please note that this boilerplate is still in Alpha.
+<img src="app/public/images/screen0.jpg" />
 
-* [Alpha](#alpha)
-* [Included Packages](#included-packages)
-* [Installation](#installation)
-* [Deployment](#deployment)
-* [File Structure](#file-structure)
-* [Bootstrap and Less](#bootstrap-and-less)
-* [Favicons and Touch Icons](#favicons-and-touch-icons)
-* [Private Network](#private-network)
-* [Unit Testing](#unit-testing)
-* [License](#license)
-
-## <a name="included-packages"></a> Included Packages
-
-* Collections:
-  * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers)
-  * [matb33:collection-hooks](https://github.com/matb33/meteor-collection-hooks)
-  * [reywood:publish-composite](https://github.com/englue/meteor-publish-composite)
-  * [frozeman:persistent-minimongo](https://github.com/frozeman/meteor-persistent-minimongo)
-* Router:
-  * [iron:router](https://github.com/EventedMind/iron-router)
-  * [zimme:iron-router-active](https://github.com/zimme/meteor-iron-router-active)
-  * [yasinuslu:blaze-meta](https://github.com/yasinuslu/blaze-meta)
-* [Less](http://lesscss.org)
-  * [Bootstrap](http://getbootstrap.com)
-  * [Font Awesome](http://fontawesome.io)
-* [Ethereum](http://ethereum.org)
-  * [ethereum:elements](https://github.com/ethereum/meteor-package-elements)
-  * [ethereum:tools](https://github.com/ethereum/meteor-package-tools)
-  * [ethereum:js](https://github.com/ethereum/ethereum.js)
-  * [ethereum:accounts](https://github.com/ethereum/meteor-package-accounts/)
-  * [ethereum:blocks](https://github.com/ethereum/meteor-package-blocks/)
-* Numbers:
-  * [3stack:bignumber](https://github.com/MikeMcl/bignumber.js/)
-  * [chance.js](http://chancejs.com/)
-* Language:
-  * [tap:i18n](https://github.com/TAPevents/tap-i18n)
-* Unit Testing:
-  * [mike:mocha](https://github.com/mad-eye/meteor-mocha-web/)
-* Misc:
-  * [Moment.js](http://momentjs.com/)
-  * [chuangbo:cookie](https://github.com/chuangbo/meteor-cookie)
-  * [Underscore.js](http://underscorejs.org/)
-  * [Underscore.string](http://epeli.github.io/underscore.string/)
-  * [frozeman:storage](https://github.com/frozeman/meteor-storage)
-  * [frozeman:template-var](https://github.com/frozeman/meteor-template-var)
-  * [frozeman:reactive-timer](https://github.com/frozeman/meteor-reactive-timer)
-  
 ## <a name="alpha"></a> Hosted Alpha
 
-http://meteor-dapp-boilerplate.meteor.com
+Please connect this with your geth or cpp Ethereum client before running. The "/admin" page is the dApp management and deployment dashboard.
+
+<a href="http://weifund.meteor.com">http://weifund.meteor.com</a>
 
 ## <a name="installation"></a> Installation
 
-Clone this repo
-
-    $ git clone http://github.com/SilentCicero/meteor-dapp-boilerplate
-    
-Create an account with geth (create a passphrase):
-
-    $ geth account new
-
-Start a local geth node instace (then hit 'enter' to promt passphrase input):
-
-    $ geth --rpc --rpcaddr="0.0.0.0" --rpccorsdomain="*" --mine --unlock=0 --verbosity=5 --maxpeers=0 --minerthreads="4"
-
-Start the app using Meteor
-
-    $ cd meteor-dapp-boilerplate/app
+1. Clone this repo and run the dApp
+   
+    ```
+    $ git clone https://github.com/WeiFund/WeiFund.git
+    $ cd WeiFund/app
     $ meteor
-
-## <a name="file-structure"></a> File Structure
-
-This file structure is largley based off of Differentials boilerplate, but with client-only directories. Client-only files are stored in the `client` directory. The `public` directory is for publicly accessible assets such as images and fonts. The `i18n` directory is for language files.
-
-## <a name="bootstrap-and-less"></a> Bootstrap and LESS
-
-The majority of Bootstrap can be customized with LESS variables. If you look in `client/stylesheets/base/lib/bootstrap/variables.import.less` you will see a slew of configuration variables that can be tweaked to drastically change the look and feel of your site without having to write a single line of CSS.
-
-However we should avoid modifying the core Bootstrap Less files (in case we want to update them later), and should instead override the variables in our own LESS files.
-
-For example, to change the color of all primary buttons and links, simply add a `@brand-primary` variable to `stylesheets/base/variables.import.less`:
-
-```
-// variables.import.less
-@brand-primary: #DC681D;
-```
-
-If you'd like to override a feature of Bootstrap that can't be modified using variables, simply create a new file in the `client/stylesheets/components` directory named after the corresponding Bootstrap component (eg. `buttons` in this case), and make your changes there.
-
-```
-// buttons.import.less
-.btn {
-  text-transform: uppercase;
-}
-```
-
-After your file is ready, you need to import it into `client/stylesheets/base/global.less`. So, you would add in this statement:
-```
-@import '@{components}/buttons.import.less';
-```
-
-The reason that this is done is to avoid any issues when the LESS files are compiled into CSS. That way, if one component relies on another or you want a certain order for your components, you can avoid any issues.
-
-
-## <a name="favicons-and-touch-icons"></a> Favicons and Touch Icons
-
-Upload your image to http://realfavicongenerator.net/ and place the resulting images in `public/images/favicons`
-
-## <a name="private-network"></a> Private Network
-
-If you would like to test your dApp with a local private Ethereum node, a `test-genesis.json` file is provided in the `app` folder. This is an example command line to run your own private network:
-
-    $ geth --rpc --rpccorsdomain "*" --genesis test-genesis.json --networkid 1234 --mine --unlock 0
-
-## <a name="unit-testing"></a> Unit Testing
-
-All tests are stored in the `app/tests` directory. By default the [Mocha](https://mochajs.org/) testing framework is not installed, but some example tests are provided with this boilerplate. In order to activate Mocha/Velocity you must edit `app/.meteor/packages` and uncomment `#mike:mocha` to `mike:mocha`. A testing button will appear on the top right hand corner of your dApp. Remember to remove the mocha package for deployment and production.
-
-Add Mocha/Velocity
-
-    $ meteor add mike:mocha
+    ```
     
-Remove Mocha/Velocity
+2. Run a local <a href="https://github.com/ethereum/go-ethereum">geth</a> node:
 
-    $ meteor remove mike:mocha
+    ```
+    $ geth --rpc --rpcaddr="0.0.0.0" --verbosity=5 --maxpeers=0 --rpccorsdomain="http://localhost:3000" --genesis "test-genesis.json" --verbosity 5 --unlock=primary --mine
+    ```
 
-Please refer to this page for more on unit testing in Meteor: https://velocity.readme.io/
+3. Go to `http://localhost:3000/admin`
+
+4. Refresh and run WeiFund!
+
+
+## <a name="meteoreth"></a> Run with <a href="https://github.com/SilentCicero/meteoreth">meteoreth</a>
+
+```
+$ cd WeiFund/app
+$ meteoreth
+```
+
+## <a name="config"></a> Deployment & Testing
+
+Once you have WeiFund running, you can deploy a WeiFund contract for testing by going to "/admin" and clicking the "Deploy" button. This will deploy WeiFund's core contract and save it's contract address in your browsers local storage. Then you can proceed to create a new campaign by either going to "/start" and filling out the new campaign fields or by clicking "Seed Content" in the "/admin" section.
+
+Note, in the "/admin" section is a small accounts manager for selecting and viewing your available Ethereum accounts and balances. You can select an account to use for all transactions by clicking the account. It will be marked 'selected'.
+
+## <a name="namereg"></a> NameReg
+
+All name registry (NameReg) utilties are handled with a NameReg contract that links bytes32 names with address values. The NameReg system for WeiFund can be deployed in the "/admin" page by clicking "Deploy" underneath the NameReg Manager. Once deployed, the NameReg contract address will be saved in local storage. You can then proceed to register your name, by filling out a name and then clicking "Register". You may also lookup names and addresses as well as unregistering your name.
+
+## <a name="staffpicks"></a> Staff Picks
+
+The StaffPicks contract enables the WeiFund team to select crowdfunding campaigns as their pick for that week. You can manage the StaffPicks contract int he "/admin" section.
+
+## <a name="token"></a> Token Builder
+
+WeiFund, by default, comes with a basic token builder for building and deploying the WeiCoin token system with your campaign. The builder is available at "/token" and can be used to set and launch a WeiCoin. The address of that is returned after deployment is the address you should use as your "config address" for your WeiFund campaign.
+
+## <a name="config"></a> Config Integration
+
+WeiFund campaigns can be given a configuration ("config") address upon creation. This address allows the extension of campaigns to other contracts. The config contract will be called upon a new vote, campaign, payout or refund. Please refer to the WeiFund.sol contract for further details. Please note, if the config address is too an invalid or non-existent contract, critical contract features for your campaign can become non-assessable.
+
+## <a name="mission"></a> Mission
+
+WeiFund's central mission statement is: to further the development of decentralized crowdfunding technology and to make crowdfunding as free, open, secure and extendable as possible.
+
+## <a name="milestones"></a> Milestones
+
+###1. NameReg
+
+NameReg contract integration for the management and use of usernames with WeiFund.
+
+###2. Token Systems
+
+A token templating and management system for deploying and operating a basic custom token in tandem with WeiFund campaigns.
+
+###3. Revamp of Landing and Discovery Pages
+
+This will include making WeiFund's landing page more interactive, with various recent, successful and up and coming campaigns listed on the landing page.
+
+###4. Share/Embed Widgets
+
+A share and embed widget set to integrate WeiFund campaigns into other DApps and web3 enabled websites.
+
+###5. Whisper Integration
+
+A review and communication system leveraging Ethereum's Whisper protocol, so that users and campaign operators can securely and reliably communicate with one another.
+
 
 ## <a name="license"></a> License
 
-Released under the MIT License, see LICENSE file.
+WeiFund is under the MIT License type.
+
+Copyright (c) 2015 Nick Dodson. <http://nickdodson.com>
