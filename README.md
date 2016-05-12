@@ -65,7 +65,7 @@ Create an account with geth (create a passphrase):
 
     $ geth account new
 
-Start a local geth node instace (then hit 'enter' to promt passphrase input):
+Start a local geth node instance (then hit 'enter' to promt passphrase input):
 
     $ geth --rpc --rpcaddr="0.0.0.0" --rpccorsdomain="*" --mine --unlock=0 --verbosity=5 --maxpeers=0 --minerthreads="4"
 
